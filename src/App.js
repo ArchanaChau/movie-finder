@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import MoviesList from "./component/MoviesList";
+import { Provider } from "react-redux";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import store from "./redux/store";
+import "./App.css";
+import MovieDetail from "./component/MovieDetail";
+import Users from "./component/Users";
+// import { Fragment } from "react";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Provider store={store}>
+        <div className="container">
+          <div className="row">
+            {/* <Users /> */}
+            <Routes>
+              <Route path="/" element={<MoviesList />}></Route>
+              <Route path="/movie-detail" element={<MovieDetail />}></Route>
+            </Routes>
+          </div>
+        </div>
+      </Provider>
+    </BrowserRouter>
   );
 }
 
