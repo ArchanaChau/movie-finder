@@ -23,12 +23,11 @@ const MoviesCard = () => {
     return movieData.movies.slice(firstPageIndex, lastPageIndex);
   }, [currentPage]);
 
-  useEffect(() => {}, [dispatch]);
-
   const goToMovieDetaiPage = (data) => {
     navigate("/movie-detail");
     dispatch(movieDetailData(data));
   };
+
   const finaldata =
     currentTableData.length <= 0 && movieData.movies.length > 0
       ? movieData.movies.slice(0, 8)
@@ -42,6 +41,7 @@ const MoviesCard = () => {
     <h2>{movieData.error}</h2>
   ) : (
     <Fragment>
+      <h2>Trending</h2>
       {finaldata.map((data) => {
         return (
           <div

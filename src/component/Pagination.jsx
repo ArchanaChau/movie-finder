@@ -41,9 +41,13 @@ const Pagination = (props) => {
       <li className="pagination-item" onClick={onPrevious}>
         <i className="fa fa-angle-left" aria-hidden="true"></i>
       </li>
-      {paginationRange.map((pageNumber) => {
+      {paginationRange.map((pageNumber, index) => {
         if (pageNumber === DOTS) {
-          return <li className="pagination-item dots">&#8230;</li>;
+          return (
+            <li className="pagination-item dots" key={index}>
+              &#8230;
+            </li>
+          );
         }
 
         return (
@@ -52,6 +56,7 @@ const Pagination = (props) => {
               selected: pageNumber === currentPage,
             })}
             onClick={() => onPageChange(pageNumber)}
+            key={index}
           >
             {pageNumber}
           </li>

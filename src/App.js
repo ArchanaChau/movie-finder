@@ -4,8 +4,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import store from "./redux/store";
 import "./App.css";
 import MovieDetail from "./component/MovieDetail";
-import Users from "./component/Users";
-// import { Fragment } from "react";
 
 function App() {
   return (
@@ -13,7 +11,6 @@ function App() {
       <Provider store={store}>
         <div className="container">
           <div className="row">
-            {/* <Users /> */}
             <Routes>
               <Route path="/" element={<MoviesList />}></Route>
               <Route path="/movie-detail" element={<MovieDetail />}></Route>

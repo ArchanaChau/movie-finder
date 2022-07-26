@@ -38,9 +38,9 @@ const SearchBar = () => {
           onClick={submitHandler}
         >
           <i
-            className="fa fa-search"
+            className="fa fa-search search"
             aria-hidden="true"
-            style={{ color: "#fff" }}
+            // style={{ color: "#fff" }}
           ></i>
         </button>
       </div>
