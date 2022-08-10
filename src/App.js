@@ -6,6 +6,7 @@ import "./App.css";
 import MovieDetail from "./component/MovieDetail";
 
 function App() {
+  console.log("first");
   return (
     <BrowserRouter>
       <Provider store={store}>
